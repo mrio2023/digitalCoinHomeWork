@@ -1,0 +1,14 @@
+services:
+  tugraph:
+    image: docker.m.daocloud.io/tugraph/tugraph-runtime-centos7:4.5.1   # 国内能拉
+    container_name: tugraph
+    restart: unless-stopped
+    ports:
+      - "7070:7070"   # Web
+      - "7687:7687"   # Bolt
+      - "9090:9090"   # RPC
+    volumes:
+      - ./data:/var/lib/lgraph/data
+      - ./log:/var/log/lgraph_log
+    command: >
+      lgraph_server -d run --enable_plugin true

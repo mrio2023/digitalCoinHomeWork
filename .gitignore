@@ -1,0 +1,7 @@
+﻿# 运行时大数据
+data_to_use/
+data/
+log/
+*.mdb
+*.log
+docker-image.tar
